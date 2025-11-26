@@ -1,5 +1,8 @@
 /**
- * Fundamentos da POO
+ * Fundamentos da POO (objetivo principal: representar cada elemento do mundo real para um objeto)
+ * Abstração (Definir um modelo para criação dos objetos)
+ * Herança (Criação de uma sub-classe da classe modelo estendendo seus atributos e métodos)
+ * Polimorfismo (Modificação do comportamento de um método existente na classe modelo ou sobre escrita de método)  
  */
 
 class Bloco {
@@ -25,6 +28,35 @@ class Bloco {
     }
 }
 
+class Enxada extends Bloco {
+    //atributos
+    constructor(textura, resistencia, conquista){
+        super(textura, resistencia); //reutilizar os atributos da classe Bloco
+        this.conquista=conquista;
+    }
+
+    //ações ou métodos
+    criarEnxada(){
+        console.log("-------------------------------------------------------");
+        console.log("-_");
+        console.log(" /");
+        console.log(`Enxada de ${this.textura}`); //herda da classe Bloco o atributo textura
+        console.log(`Resistência: ${this.resistencia}`); //herda da classe Bloco o atributo resistencia
+    }
+    arar(){
+        console.log("._._._. Terra arada!");
+        if (this.conquista === true) {
+            console.log("☀ Conquista obtida!");
+        }
+    }
+
+    //Polimorfismo
+    minerar(){
+        console.log("✞ Dano atribuído!");
+    }
+}
+
+
 /******* MUNDO *******/
 console.clear();
 console.log(" _____ _____ _____ _____ _____ _____ _____ _____ _____ ");
@@ -45,3 +77,15 @@ bloco2.construir();
 const bloco3=new Bloco("pedra", 5);
 bloco3.criarBloco();
 bloco3.minerar();
+
+const enxada1=new Enxada("madeira", 2, false);
+enxada1.criarEnxada();
+enxada1.arar();
+
+const enxada2=new Enxada("ferro", 5, true);
+enxada2.criarEnxada();
+enxada2.arar();
+
+const enxada3=new Enxada("diamante", 10, false);
+enxada3.criarEnxada();
+enxada3.minerar();
