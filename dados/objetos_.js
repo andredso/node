@@ -6,18 +6,18 @@
 const funcionario1={};
 //console.log(typeof(funcionario1));
 //adicionar dados a estrutura
-funcionario1.nome = "Desenvolvimento";
-funcionario1.cargo = "Dev";
-funcionario1.email = "corte1@neobrasil.com.br";
-funcionario1.salario = 8000;
-funcionario1.insta = "@neobrasil"
+funcionario1.nome="Desenvolvimento";
+funcionario1.cargo="Dev";
+funcionario1.email="corte1@neobrasil.com.br";
+funcionario1.salario=8000;
+funcionario1.insta="@neobrasil"
 
 //listar os dados da estrutura
 console.log(funcionario1);
 console.log(funcionario1.cargo);
 
 //modificar os dados da estrutura
-funcionario1.nome = "Corte1";
+funcionario1.nome="Corte1";
 console.log(funcionario1);
 
 //excluir dados da estrutura
@@ -62,7 +62,7 @@ const funcionario5={
     cargo:"Engenheiro",
     email:"ironman@email.com",
     salario:375000,
-    amarmadura: { //Sub objeto 
+    armadura: { //Sub objeto 
         versao:"Mark II",
         ano: 2010,
         reator:"Arc 01"
@@ -72,5 +72,5 @@ const funcionario5={
     }
 }
 console.log(funcionario5);
-console.log(funcionario5.amarmadura.versao);
+console.log(funcionario5.armadura.versao);
 funcionario5.suitUp();

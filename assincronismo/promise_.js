@@ -1,6 +1,8 @@
 /**
- * Assincronismo
- * Promise
+ * Assincronismo (No javascript, é usado para problemas de desempenho e também em operações que podem ter sucesso
+ * ou falha no futuro. Exemplo: acessar um banco de dados, consumir uma api através de solicitações http ou ler e
+ * gravar arquivos em disco).
+ * Promise (São objetos que representam a eventual conclusão ou falha de uma operação assíncrona).
  */
 
 const read=require("readline-sync");
@@ -22,9 +24,10 @@ console.clear();
 console.log("-------------------------");
 console.log(" USUÁRIO");
 console.log("-------------------------");
-let login = read.question("login: ");
-let senha = read.question("senha: ");
+let login=read.question("login: ");
+let senha=read.question("senha: ");
 console.log("-------------------------");
+
 logar(login, senha)
     .then((message)=>{
         console.log(message);
@@ -33,7 +36,7 @@ logar(login, senha)
         console.log("Erro de autenticação. "+error);
     });
 
-// Função logar (autenticação do usuário
+// Função logar (autenticação do usuário)
 function logar(login, senha){
     return (new Promise((resolve, reject)=>{
         setTimeout(()=>{
